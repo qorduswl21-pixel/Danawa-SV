@@ -77,3 +77,19 @@ shared/           # Shared types and schemas
 - **Danawa Auto**: Korean car sales data source
 - URL patterns for domestic and import vehicle data
 - Data includes KAMA/KAIDA official sales figures
+
+## Netlify Deployment
+
+### Configuration
+- **netlify.toml**: Netlify build and redirect configuration
+- **netlify/functions/api.ts**: Serverless function for API endpoints
+
+### Deployment Steps
+1. Connect your GitHub repository to Netlify
+2. Build command: `npm run build`
+3. Publish directory: `dist/public`
+4. Functions directory: `netlify/functions`
+
+### API Redirects
+- `/api/*` requests are redirected to `/.netlify/functions/api/*`
+- SPA routing: All other routes redirect to `/index.html`
